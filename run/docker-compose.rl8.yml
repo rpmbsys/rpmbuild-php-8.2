@@ -1,25 +1,21 @@
-version: "3"
 services:
   rocky8run:
     build:
       context: .
-      dockerfile: Dockerfile.rl8
       args:
         rocky: $RL8
     image: "aursu/php82build:${RL8TAG}-runtime"
   rocky8devbase:
     build:
       context: .
-      dockerfile: Dockerfile.rl8
       args:
-        image: node16dev
+        image: node18dev
         rocky: $RL8
     image: "aursu/php82build:${RL8TAG}-devbase"
   rocky8dev2base:
     build:
       context: .
-      dockerfile: Dockerfile.rl8
       args:
-        image: node18dev
+        image: node20dev
         rocky: $RL8
     image: "aursu/php82build:${RL8TAG}-dev2base"

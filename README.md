@@ -4,10 +4,9 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
 
 ### Requirements
 
-* Docker CE 17.12.0+ (https://docs.docker.com/install/)
-* Docker Compose 1.10+ (https://github.com/docker/compose/releases/)
+* Docker CE 20.10.0+ (https://docs.docker.com/install/)
 
-### PHP 8.1 Requirements
+### PHP 8.2 Requirements
 
 ### Prerequisites
 
@@ -18,10 +17,6 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
     and
 
     https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce-1
-
-2. `Docker Compose` should be installed on build host following instructions:
-
-    https://docs.docker.com/compose/install/#install-compose
 
 3. Add your build user into docker group (required to manage docker):
 
@@ -43,8 +38,8 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
 1. Clone build repo with submodules:
 
     ```
-    git clone --recursive https://github.com/aursu/rpmbuild-php-8.1.git
-    cd rpmbuild-php-8.1
+    git clone --recursive https://github.com/aursu/rpmbuild-php-8.2.git
+    cd rpmbuild-php-8.2
     ```
 
 ### Build process
@@ -53,14 +48,14 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
 1. Build images
 
     ```
-    docker-compose -f docker-compose.base.yml build
-    docker-compose build
+    docker compose -f docker-compose.base.yml build
+    docker compose build
     ```
 
 2. Build packages
 
     ```
-    docker-compose up -d
+    docker compose up -d
     ```
 
     command above will start all build services in background. But it is possible
@@ -70,15 +65,15 @@ to run any of them or run in foreground etc
 
 ### Access RPM packages
 
-1. RPM packages located inside `rpm7` and `rpm8` volumes
+1. RPM packages located inside `rpm8rocky`, `rpm9rocky` and `rpm9stream` volumes
 
 ### Clean up build
 
 To complete all build processes run commands:
 
 ```
-docker-compose down
-docker-compose -f rpmbuild/docker-compose.yml down
+docker compose down
+docker compose -f rpmbuild/docker-compose.yml down
 ```
 
 These commands will stop and remove all containers but not build images (see
