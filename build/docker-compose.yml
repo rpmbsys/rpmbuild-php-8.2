@@ -1,20 +1,13 @@
 services:
-  rocky8build:
+  rocky10build:
     build:
       context: .
       args:
-        rocky: $RL8
-    image: "aursu/php82build:${RL8TAG}-build"
+        rocky: $RL10
+    image: "aursu/php82build:${RL10TAG}-build"
   rocky9build:
     build:
       context: .
       args:
         rocky: $RL9
     image: "aursu/php82build:${RL9TAG}-build"
-  stream9build:
-    build:
-      context: .
-      dockerfile: Dockerfile.el9
-      args:
-        centos: $OS9
-    image: "aursu/php82build:${OS9TAG}-build"

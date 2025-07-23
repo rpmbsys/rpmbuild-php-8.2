@@ -146,7 +146,7 @@
 
 Summary: PHP scripting language for creating dynamic web sites
 Name: %{php_main}
-Version: 8.2.21
+Version: 8.2.29
 Release: %{rpmrel}%{?dist}
 
 # All files licensed under PHP version 3.01, except
@@ -204,14 +204,14 @@ Patch8: php-8.1.0-libdb.patch
 # Use system nikic/php-parser
 Patch41: php-8.2.0-parser.patch
 # use system tzdata
-Patch42: php-8.1.0-systzdata-v24.patch
+Patch42: php-8.2.23-systzdata-v24.patch
 # See http://bugs.php.net/53436
 Patch43: php-7.4.0-phpize.patch
 # Use -lldap_r for OpenLDAP
 Patch45: php-7.4.0-ldap_r.patch
 # drop "Configure command" from phpinfo output
 # and only use gcc (instead of full version)
-Patch47: php-8.1.0-phpinfo.patch
+Patch47: php-8.2.25-phpinfo.patch
 
 Patch60: php-5.6.31-no-scan-dir-override.patch
 
@@ -222,6 +222,10 @@ Patch60: php-5.6.31-no-scan-dir-override.patch
 # Fixes for tests (300+)
 # Factory is droped from system tzdata
 Patch300: php-7.4.0-datetests.patch
+# for pcre2 10.45 (F42)
+Patch301: php-8.2.28-pcretests.patch
+# for zlib-ng
+Patch302: php-8.2.28-zlibtests.patch
 
 # relocation (400+)
 Patch405: php82-php-7.2.0-includedir.patch
@@ -738,7 +742,7 @@ possibility to act as a socket server as well as a client.
 %patch -P45 -p1 -b .ldap_r
 %patch -P47 -p1 -b .phpinfo
 
-%patch60 -p1
+%patch -P60 -p1
 
 # upstream patches
 
@@ -746,6 +750,8 @@ possibility to act as a socket server as well as a client.
 
 # Fixes for tests
 %patch -P300 -p1 -b .datetests
+%patch -P301 -p1 -b .pcretests
+%patch -P302 -p1 -b .zlibtests
 
 # Prevent %%doc confusion over LICENSE files
 cp Zend/LICENSE ZEND_LICENSE
@@ -1536,6 +1542,9 @@ exit 0
 %endif
 
 %changelog
+* Wed Jul  2 2025 Remi Collet <remi@remirepo.net> - 8.2.29-1
+- Update to 8.2.29 - http://www.php.net/releases/8_2_29.php
+
 * Tue Jul  2 2024 Remi Collet <remi@remirepo.net> - 8.2.21-1
 - Update to 8.2.21 - http://www.php.net/releases/8_2_21.php
 
