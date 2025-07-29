@@ -1,40 +1,20 @@
 services:
-  rocky8dev:
+  rocky10dev:
     build:
       context: dev
       args:
-        os: $RL8
-    image: "aursu/php82build:${RL8TAG}-dev"
+        os: $RL10
+    image: "ghcr.io/rpmbsys/php82build:${RL10TAG}-dev"
   rocky9dev:
     build:
       context: dev
       args:
         os: $RL9
-    image: "aursu/php82build:${RL9TAG}-dev"
-  stream9dev:
-    build:
-      context: dev
-      args:
-        os: $OS9
-    image: "aursu/php82build:${OS9TAG}-dev"
-  rocky8dev2:
-    build:
-      context: dev
-      args:
-        os: $RL8
-        image: dev2base
-    image: "aursu/php82build:${RL8TAG}-dev2"
+    image: "ghcr.io/rpmbsys/php82build:${RL9TAG}-dev"
   rocky9dev2:
     build:
       context: dev
       args:
         os: $RL9
         image: dev2base
-    image: "aursu/php82build:${RL9TAG}-dev2"
-  stream9dev2:
-    build:
-      context: dev
-      args:
-        os: $OS9
-        image: dev2base
-    image: "aursu/php82build:${OS9TAG}-dev2"
+    image: "ghcr.io/rpmbsys/php82build:${RL9TAG}-dev2"

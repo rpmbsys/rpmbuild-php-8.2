@@ -4,7 +4,7 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
 
 ### Requirements
 
-* Docker CE 20.10.0+ (https://docs.docker.com/install/)
+* Docker CE 20.10.0+ (https://docs.docker.com/desktop/setup/install/linux/)
 
 ### PHP 8.2 Requirements
 
@@ -12,11 +12,7 @@ Sections `Prerequisites` and `Setup` should be done only once per build host
 
 1. `Docker` should be installed on build host following these instructions:
 
-    https://docs.docker.com/install/linux/docker-ce/centos/#set-up-the-repository
-
-    and
-
-    https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce-1
+    https://docs.docker.com/engine/install/
 
 3. Add your build user into docker group (required to manage docker):
 
@@ -65,7 +61,7 @@ to run any of them or run in foreground etc
 
 ### Access RPM packages
 
-1. RPM packages located inside `rpm8rocky`, `rpm9rocky` and `rpm9stream` volumes
+1. RPM packages located inside `rpm9rocky` and `rpm10rocky` volumes
 
 ### Clean up build
 
@@ -73,7 +69,6 @@ To complete all build processes run commands:
 
 ```
 docker compose down
-docker compose -f rpmbuild/docker-compose.yml down
 ```
 
 These commands will stop and remove all containers but not build images (see

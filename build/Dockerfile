@@ -11,4 +11,5 @@ RUN dnf -y --enablerepo=bintray-custom --enablerepo=bintray-phpcustom install \
         php-devel-8.2.29 \
         php-process-8.2.29 \
         php-xml-8.2.29 \
+        tzdata \
     && dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
