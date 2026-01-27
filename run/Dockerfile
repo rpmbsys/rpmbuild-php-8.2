@@ -8,16 +8,16 @@ COPY system/etc/yum.repos.d/bintray-custom-rocky.repo /etc/yum.repos.d/bintray-c
 
 RUN microdnf -y --enablerepo=crb --enablerepo=bintray-custom --enablerepo=bintray-phpcustom install \
         ImageMagick-libs \
-        php-bcmath-8.2.29 \
-        php-cli-8.2.29 \
-        php-fpm-8.2.29 \
-        php-opcache-8.2.29 \
+        php-bcmath-8.2.30 \
+        php-cli-8.2.30 \
+        php-fpm-8.2.30 \
+        php-opcache-8.2.30 \
         php-pecl-apcu \
         php-pecl-geoip \
         php-pecl-memcached \
         php-pecl-redis6 \
-        php-sodium-8.2.29 \
-        php-xml-8.2.29 \
+        php-sodium-8.2.30 \
+        php-xml-8.2.30 \
         tzdata \
     && microdnf -y --disablerepo=epel --enablerepo=bintray-phpcustom install \
         php-pecl-imagick \

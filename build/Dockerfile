@@ -6,10 +6,10 @@ USER root
 COPY system/etc/yum.repos.d/bintray-custom-rocky.repo /etc/yum.repos.d/bintray-custom.repo
 
 RUN dnf -y --enablerepo=bintray-custom --enablerepo=bintray-phpcustom install \
-        php-cli-8.2.29 \
-        php-common-8.2.29 \
-        php-devel-8.2.29 \
-        php-process-8.2.29 \
-        php-xml-8.2.29 \
+        php-cli-8.2.30 \
+        php-common-8.2.30 \
+        php-devel-8.2.30 \
+        php-process-8.2.30 \
+        php-xml-8.2.30 \
         tzdata \
     && dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
