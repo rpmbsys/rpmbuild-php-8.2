@@ -1,4 +1,4 @@
-ARG os=9.7.20251123
+ARG os=9.8.20260525.0
 FROM aursu/rpmbuild:${os}-build
 
 USER root
